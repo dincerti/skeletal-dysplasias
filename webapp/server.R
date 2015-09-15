@@ -2,7 +2,7 @@
 library("shiny")
 library("shinysky")
 library("data.table")
-diseases <- fread("data/lachman_table_reformat.csv")
+diseases <- fread("data/lachman_table.csv")
 setkey(diseases, feature, disease)
 
 # Define server logic required to draw a histogram
@@ -15,7 +15,7 @@ shinyServer(function(input, output) {
     x <- x[N >= input$range[1] & N <= input$range[2]]
     setnames(x, names(x), c("Disease", "# of Features"))
     return(x)
-  }, options = list(pageLength = 10, searching = TRUE, searching = 0,
+  }, options = list(pageLength = 10, searching = TRUE, searching = 1,
                     language = list(emptyTable = "No disease match found")))
 })
 

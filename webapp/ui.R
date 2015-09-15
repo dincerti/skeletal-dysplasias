@@ -2,7 +2,7 @@
 library("shiny")
 library("shinysky")
 library("data.table")
-diseases <- fread("data/lachman_table_reformat.csv")
+diseases <- fread("data/lachman_table.csv")
 features <- sort(unique(diseases$feature))
 
 # Define UI for application that draws a histogram
@@ -20,7 +20,7 @@ shinyUI(fluidPage(
       sliderInput("range", 
                   label = "Range for # of Features:",
                   min = 1, max = length(features), value = c(2, length(features)),
-                  step = 1)
+                  step = 1, ticks = FALSE)
     
       ),
     
