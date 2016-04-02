@@ -1,11 +1,4 @@
 
-library("shiny")
-library("shinysky")
-library("data.table")
-diseases <- fread("data/lachman_table.csv")
-setkey(diseases, feature, disease)
-
-# Define server logic required to draw a histogram
 shinyServer(function(input, output) {
   
   output$Table <- renderDataTable({  
