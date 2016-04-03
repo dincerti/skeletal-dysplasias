@@ -1,4 +1,3 @@
-
 # title
 title <- titlePanel("Skeletal Dysplasias")
 
@@ -13,7 +12,7 @@ slider <- sliderInput("range",
 sidebar <- sidebarPanel(select, slider)
 
 # main panel
-main <-     mainPanel(dataTableOutput("Table")) 
+main <- mainPanel(dataTableOutput("Table")) 
 
 # UI
 fluidPage(title, sidebar, main)
