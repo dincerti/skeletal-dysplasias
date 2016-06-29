@@ -1,5 +1,4 @@
 library("shiny")
-library("shinysky")
 library("data.table")
-diseases <- fread("data/lachman_table.csv")
+diseases <- fread("../data/lachman_table.txt")
 features <- sort(unique(diseases$feature))

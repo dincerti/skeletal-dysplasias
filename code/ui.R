@@ -2,8 +2,10 @@
 title <- titlePanel("Skeletal Dysplasias")
 
 # select inputs
-select <- select2Input("features","Features", 
-                       choices = features)
+select <- selectInput("features","Features", 
+                       choices = features,
+                      multiple = TRUE,
+                      selected = NULL)
 slider <- sliderInput("range", 
                       label = "Range for # of Features:",
                       min = 1, max = length(features), 
